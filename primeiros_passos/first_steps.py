@@ -15,14 +15,14 @@ def triangle(side_length: int = 300):
         right(120)
 
 
-def multiples_geoms(geom_function, n: int, turn_angle: int = 5):
+def multiples_geoms(geom_function, n: int, turning_degree: int = 5):
     """Make the turtle draw a specific geom multiple types
     turning right a specific angle in each time the geom is
     draw
     """
     for i in range(n):
         geom_function(200)
-        right(turn_angle)
+        right(turning_degree)
 
 
 def polygon(n_sides: int, side_length: int = 100):
@@ -35,7 +35,19 @@ def polygon(n_sides: int, side_length: int = 100):
         right(external_angle)
 
 
+def spiral(geom_function):
+    """Draw a spiral with the geom specified in geom_function"""
+    n_geoms = 60
+    turning_degree = 5
+    length = 5
+
+    for i in range(n_geoms):
+        geom_function(side_length=length)
+        right(turning_degree)
+        length += 5
+
+
 if __name__ == "__main__":
-    speed(1)
-    polygon(1000, 1)
+    speed(0)
+    spiral(triangle)
     input('enter to finish...')
