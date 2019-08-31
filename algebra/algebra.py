@@ -12,6 +12,6 @@ def equation(a, b, c, d):
     Logo, tem-se a=2, b=0, c=0, d=10
     Portanto
     >>> equation(2, 0, 0, 10)
-    >>> 5.0
+    5.0
     """
     return ((d-b)/(a-c))
